@@ -18,7 +18,7 @@ export abstract class Question {
   }
 }
 
-interface QuestionHeader {
+export interface QuestionHeader {
   topic: string;
   difficulty: number;
 }
@@ -34,3 +34,5 @@ export interface QuestionData {
   choices?: string[] | number[];
   answer: string | number;
 }
+
+export abstract class Term {}

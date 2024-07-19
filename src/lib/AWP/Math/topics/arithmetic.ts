@@ -1,4 +1,4 @@
-import { Question, QuestionData } from "../classes";
+import { Question, type QuestionData, type QuestionHeader } from "../classes";
 
 class Arithmetic {
   static createQuestion(difficulty: number): ArithmeticQuestion {
@@ -6,22 +6,19 @@ class Arithmetic {
   }
 }
 
+// For doing actual arithmetic calculations; Backend
+class ArithmeticOperations {
+  static getResult()
+}
+
 class ArithmeticQuestion extends Question {
   createChoices() {}
 
-  static create(difficulty: number): QuestionData {
-    
-    // Easy (1-50)
-    if(difficulty > 0 && difficulty < 51) {
-      return {
-        
-      }
-    }
-
-  }
-  
   constructor(options: {type: "choice" | "blank" ,difficulty: number}) {
-
-    super({ topic: "arithmetic", difficulty: options.difficulty });
+    const headerData: QuestionHeader = { topic: "arithmetic", difficulty: options.difficulty };
+    const questionData: QuestionData = {
+      
+    }
+    super(headerData, questionData);
   }
 }
